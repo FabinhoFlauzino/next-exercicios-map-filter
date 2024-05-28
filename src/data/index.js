@@ -7,3 +7,20 @@ export const ColecaoCarros = [
   { marca: 'Fiat', modelo: 'Grand Sienna', anoFabricacao: 2020, imagem: 'https://s2-autoesporte.glbimg.com/9JbaT_jYsBSMJ40PRR3GYxtPiIg=/0x0:620x400/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/g/l/WKQvWdSyu9YP7CDbsl9g/2014-07-23-grand-siena-italia.jpg' },
   { marca: 'Chevrolet', modelo: 'Cobalt', anoFabricacao: 2021, imagem: 'https://djdnloyvqzzd3.cloudfront.net/static/gallery/br/desktop/chevrolet_cobalt_2020_plano_detalle.jpg' },
 ];
+
+export const Questoes = [
+  {
+    id: 1,
+    nome: "Coleção de carros",
+    resumo: "Exercício para filtrar uma coleção de dados, por ano, modelo, marca.",
+    page: "/carros-do-ano",
+    tipo: ""
+  },
+  {
+    id: 2,
+    nome: "Multiplicador",
+    resumo: "Multiplique um valor digitado pelo usuário por 4, quando um botão for clicado.",
+    page: "/multiplicador",
+    tipo: ""
+  }
+]
