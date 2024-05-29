@@ -22,5 +22,12 @@ export const Questoes = [
     resumo: "Multiplique um valor digitado pelo usuário por 4, quando um botão for clicado.",
     page: "/multiplicador",
     tipo: ""
+  },
+  {
+    id: 3,
+    nome: "Envio de Mensagem",
+    resumo: "Uma mensagem só pode ser enviada se ela tiver mais de 10 caracteres digitados.",
+    page: "/enviar-mensagem",
+    tipo: ""
   }
 ]

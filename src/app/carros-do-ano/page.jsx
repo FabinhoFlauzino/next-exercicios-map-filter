@@ -4,7 +4,8 @@ import { ColecaoCarros } from "@/data";
 import { useState } from "react";
 
 export default function CarrosDoAno() {
-  const [listaCarros, setListaCarros] = useState(ColecaoCarros)
+  const [listaCarros, setListaCarros] = useState(ColecaoCarros);
+  const [textoBusca, setTextoBusca] = useState("");
 
   const carrosPorAno = () => {
     let hoje = new Date();
@@ -15,12 +16,24 @@ export default function CarrosDoAno() {
     return carrosDoAno;
   };
 
+  const handleBuscarCarros = (textoDigitado) => {
+    const carrosFiltrados = ColecaoCarros.filter((carro) => {
+      return (carro.modelo.toLowerCase().includes(textoDigitado.toLowerCase()) ||
+        carro.marca.toLowerCase().includes(textoDigitado.toLowerCase()) ||
+        String(carro.anoFabricacao).includes(textoDigitado))
+    })
+    setTextoBusca(textoDigitado);
+    setListaCarros(carrosFiltrados);
+  }
+
   const carrosPorMarca = (marca) => {
+    setTextoBusca("")
     return setListaCarros(ColecaoCarros.filter((carro) => carro.marca.toLowerCase() === marca.toLowerCase()))
   }
 
   const limparFiltro = () => {
     setListaCarros(ColecaoCarros)
+    setTextoBusca("")
   }
 
   return (
@@ -32,6 +45,10 @@ export default function CarrosDoAno() {
         <button className="btn btn-sm btn-outline-dark text-uppercase" onClick={() => carrosPorMarca("ford")}>Ford</button>
         <button className="btn btn-sm btn-outline-dark text-uppercase" onClick={() => carrosPorMarca("renault")}>Renault</button>
         <button className="btn btn-sm text-uppercase text-danger" onClick={() => limparFiltro()}>X Limpar Filtro</button>
+      </div>
+
+      <div className="">
+        <input type="text" className="form-control" value={textoBusca} onChange={(e) => handleBuscarCarros(e.target.value)} />
       </div>
       <div className="row">
         <div className="col-12 mb-5">

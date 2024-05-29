@@ -1,4 +1,4 @@
-export default function Card({nome, resumo, page}) {
+export default function Card({ nome, resumo, page }) {
   return (
     <div className="col-lg-3 col-sm-6 col-12">
       <div className="card mb-4 w-100" style={{ minHeight: '200px' }}>
