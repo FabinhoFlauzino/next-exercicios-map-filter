@@ -32,8 +32,8 @@ export default function CarrosDoAno() {
   }
 
   const limparFiltro = () => {
-    setListaCarros(ColecaoCarros)
     setTextoBusca("")
+    setListaCarros(ColecaoCarros)
   }
 
   return (
@@ -48,7 +48,13 @@ export default function CarrosDoAno() {
       </div>
 
       <div className="">
-        <input type="text" className="form-control" value={textoBusca} onChange={(e) => handleBuscarCarros(e.target.value)} />
+        <input
+          type="text"
+          className="form-control"
+          value={textoBusca}
+          onChange={(e) => handleBuscarCarros(e.target.value)}
+          placeholder="Buscar carro"
+        />
       </div>
       <div className="row">
         <div className="col-12 mb-5">
